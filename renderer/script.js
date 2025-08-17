@@ -130,7 +130,7 @@ class WeatherApp {
                 })
             ]);
 
-            this.clearSearchResults();
+            this.hideLoading();
 
             if (weatherResult.success) {
                 this.displayCurrentWeather(weatherResult.data);
@@ -195,6 +195,10 @@ class WeatherApp {
     showLoading(message) {
         const resultsContainer = document.getElementById('searchResults');
         resultsContainer.innerHTML = `<div class="loading">${message}</div>`;
+    }
+
+    hideLoading() {
+        this.clearSearchResults();
     }
 
     showError(message) {
